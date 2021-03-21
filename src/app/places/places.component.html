@@ -1,0 +1,113 @@
+<h3 (click)="goStart()">Eco|Consult -  Home</h3>
+<button mat-raised-button  fxLayoutAlign="end" fxLayout="column"
+            color="primary" style="margin-top: 0;"
+            (click) ="LogOut()"
+            >
+            LogOut
+            </button>
+        
+
+    <mat-card class ="hello" fxLayout="row"  style="margin-bottom: 10%; background-color: cornflowerblue;"  fxLayoutAlign="space-between">
+        <figure class="figure1">
+            <img src="assets/img/Logo-EcoConsult 2.png" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure."width="89" height="65">
+        </figure>
+        <div fxLayout="column" fxLayoutAlign="center">
+             <h2  fxLayoutAlign="start center" fxLayoutAlign="space-between">Admin-Center</h2><br>
+            <span fxLayoutAlign="center center">Tel +49 (0) 6202-574414</span>
+        </div>
+        <figure class="figure">
+            <img src="assets/img/VIR.jpg" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure."width="89" height="65">
+        </figure>
+        
+   </mat-card>
+
+
+
+<div fxLayout="row" fxLayoutAlign="space-between " fxLayoutGap="80px">
+    <h4><strong>Standortliste</strong></h4>
+<div  fxLayout="column">
+    <span>Zähler</span><br>
+    <span>Anzahl freie Plätze: {{ nbrplaces }}</span>
+</div>
+</div>
+
+<div>
+    <button mat-raised-button 
+            color="primary" style="margin-bottom: 20px;"
+            (click) ="openDialog()"
+            >
+            <mat-icon>add</mat-icon>
+    </button>
+    Neues Standort erstellen
+</div>
+
+
+<div class="thead" fxLayout="row"  fxLayout="column" fxLayoutGap="20px" fxLayoutAlign="space-between " fxLayoutAlign="space-between stretch">
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" >
+   
+    <ng-container matColumnDef="id">
+        
+      <th mat-header-cell *matHeaderCellDef> placesnummer </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="placename">
+      <th mat-header-cell *matHeaderCellDef> placesname </th>
+      <td mat-cell *matCellDef="let element"> {{element.placename}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="adress">
+      <th mat-header-cell *matHeaderCellDef> adresse </th>
+      <td mat-cell *matCellDef="let element"> {{element.adress}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="telNr">
+      <th mat-header-cell *matHeaderCellDef> tel </th>
+      <td mat-cell *matCellDef="let element"> {{element.telNr}} </td>
+    </ng-container>
+
+    
+    <ng-container matColumnDef="status" >
+        <th mat-header-cell *matHeaderCellDef> status </th>
+        <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+      </ng-container>
+   
+  
+
+    <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> </th>
+        <td mat-cell *matCellDef="let element"> 
+            <div>
+                <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="end" >
+                    <button mat-raised-button 
+                            color="primary"
+                            (click) ="edit()"
+                            >
+                            Standort ändern
+                    </button>
+                
+                    <button mat-raised-button 
+                            color="warn"
+                            (click) ="cancel()"
+                            >
+                            Standort sperren
+                    </button>
+                    
+                    <button mat-raised-button 
+                            color="warn"
+                            (click) ="cancel()"
+                            >
+                            Standort entsperren
+                    </button>
+                
+                </div>
+
+            </div>
+        </td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

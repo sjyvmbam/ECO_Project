@@ -1,0 +1,33 @@
+
+<figure class="figure">
+    <img [src]="netImage" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure."width="89" height="65">
+  </figure>
+
+  <mat-card>
+ <div>
+  <div fxLayout="row" fxLayoutGap="80px" fxLayoutAlign="space-between">
+  <button mat-button [matMenuTriggerFor]="aboveMenu">Home</button>
+<mat-menu #aboveMenu="matMenu" yPosition="above">
+  <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button>
+</mat-menu>
+
+<button mat-button [matMenuTriggerFor]="belowMenu">Fahrtraining</button>
+<mat-menu #belowMenu="matMenu" yPosition="below">
+  <button mat-menu-item>Help</button>
+  <button mat-menu-item>All</button>
+</mat-menu>
+
+<button mat-button [matMenuTriggerFor]="beforeMenu">Firma</button>
+<mat-menu #beforeMenu="matMenu" xPosition="before">
+  <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button>
+</mat-menu>
+
+
+<button mat-button [matMenuTriggerFor]="afterMenu">Kontakt</button>
+<mat-menu #afterMenu="matMenu" xPosition="after">
+  <button mat-menu-item>Info</button>
+  <button mat-menu-item>About us 2</button>
+</mat-menu>
+</div>

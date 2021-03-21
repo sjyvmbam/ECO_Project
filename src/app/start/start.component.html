@@ -1,0 +1,82 @@
+<h3>Eco|Consult -  Home</h3>
+<button mat-raised-button  fxLayoutAlign="center" fxLayout="column"
+            color="primary" style="margin-top: 0;"
+            (click) ="LogOut()"
+            >
+            LogOut
+            </button>
+        
+
+    <mat-card class ="hello" fxLayout="row"  style="margin-bottom: 10%; background-color: cornflowerblue;"  fxLayoutAlign="space-between">
+        <figure class="figure1">
+            <img src="assets/img/Logo-EcoConsult 2.png" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure."width="89" height="65">
+        </figure>
+        <div fxLayout="column" fxLayoutAlign="center">
+            <h2  fxLayoutAlign="start center" fxLayoutAlign="space-between">Admin-Center</h2><br>
+           <span fxLayoutAlign="center center">Tel +49 (0) 6202-574414</span>
+       </div>
+        <figure class="figure">
+            <img src="assets/img/VIR.jpg" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure."width="89" height="65">
+        </figure>
+        
+   </mat-card>
+
+<div class="blueBar"></div>
+
+<div style="max-width: 800px; margin: auto;">
+    <div fxLayout="row" fxLayoutAlign="space-between">
+        <div>
+            <mat-card class="setGap" (click) ="addFirme()">Buchung</mat-card>
+            <div fxLayout="column" fxLayoutGap="50px">
+                <div *ngFor="let item of booksElements">
+                    {{ item.name }} <br>
+                    <span *ngIf="item.logIn">Adress <br>
+                       <span>LogIn:  {{ item.logIn }} </span><br>
+                       <span>PW:  {{ item.password }} </span>
+                    </span>
+                </div>
+            </div>
+        
+            <button mat-raised-button  fxLayoutGap="10px"
+            color="primary" style="margin-top: 26%;"
+            (click) ="addFirme()"
+            
+            >
+            + Neues Unternehmen
+            </button>
+        </div>
+
+        <div>
+            <mat-card class="setGap">Termine & Events</mat-card>
+            <div fxLayout="column" fxLayoutGap="80px">
+                <div *ngFor="let item of eventsElements">
+                    {{ item.name }}
+                </div>
+            </div>
+
+            <button mat-raised-button  class=""
+            color="primary" style="margin-top: 20px;"
+            (click) ="addEvent()"
+            >
+            + Neues Event
+            </button>
+        </div>
+
+        <div>
+            <mat-card class="setGap">Standorte</mat-card>
+            <div fxLayout="column" fxLayoutGap="80px">
+                <div *ngFor="let item of placesElements">
+                    {{ item.name }}
+                </div>
+            </div>
+
+            <button mat-raised-button 
+            color="primary" style="margin-top: 20px;"
+            (click) ="addPlace()"
+            >
+            + Neuer Standort
+            </button>
+        </div>
+
+    </div>
+</div>

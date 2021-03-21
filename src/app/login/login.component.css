@@ -1,0 +1,30 @@
+div{
+    background-color:darkgray
+}
+
+.form-group{
+    text-align: center;
+}
+h1{
+    text-align: center;
+    text-shadow:chocolate;
+}
+.info{
+    text-align: center;
+}
+input[type=username]{
+    margin-left: 40px;
+    margin-top: 20px;
+    font-weight: 100;
+    width: 30%;
+}
+input[type=password]{
+    margin-left: 60px;
+    margin-top: 40px;
+    font-weight: 100;
+    width: 30%;
+}
+.button{
+    margin-left: 50%;
+    margin-top: 50px;
+}
